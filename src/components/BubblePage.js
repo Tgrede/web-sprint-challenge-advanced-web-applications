@@ -5,6 +5,7 @@ import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 import { axiosWithAuth } from "../helpers/axiosWithAuth";
 
+
 function BubblePage(props) {
   const [colorList, setColorList] = useState([]);
 
@@ -26,13 +27,16 @@ function BubblePage(props) {
 
   
   
-
-  return (
-    <>
-      <ColorList colors={colorList} updateColors={setColorList} getColors={getColors} />
-      <Bubbles colors={colorList} />
-    </>
-  );
+if(colorList.length === 0){
+    return(<h2 data-testid='loading'>LOADING...</h2>)
+} else {
+    return (
+      <>
+        <ColorList data-testid='colorList' colors={colorList} updateColors={setColorList} getColors={getColors} />
+        <Bubbles data-testid='bubbles' colors={colorList} />
+      </>
+    );
+  }
 };
 
 export default BubblePage;
