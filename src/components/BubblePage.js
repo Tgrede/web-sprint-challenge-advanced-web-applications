@@ -32,8 +32,8 @@ if(colorList.length === 0){
 } else {
     return (
       <>
-        <ColorList data-testid='colorList' colors={colorList} updateColors={setColorList} getColors={getColors} />
-        <Bubbles data-testid='bubbles' colors={colorList} />
+        <ColorList colors={colorList} updateColors={setColorList} getColors={getColors} />
+        <Bubbles colors={colorList} />
       </>
     );
   }

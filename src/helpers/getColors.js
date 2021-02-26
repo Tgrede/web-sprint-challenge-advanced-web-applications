@@ -1,8 +1,8 @@
-import {axiosWithAuth} from './axiosWithAuth'
+import axios from 'axios'
 
 export const getColors = () => {
-  return axiosWithAuth()
-  .get('http://localhost:5000/api/colors')
+  return axios()
+  .get('/test')
   .then((res) => { 
     return res
   })

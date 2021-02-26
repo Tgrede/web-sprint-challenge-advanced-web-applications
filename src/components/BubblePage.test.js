@@ -2,6 +2,7 @@ import React from "react";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import BubblePage from "./BubblePage";
 import {getColors as mockGetColors} from '../helpers/getColors'
+import ColorList from "./ColorList";
 
 jest.mock('../helpers/getColors')
 
@@ -44,7 +45,7 @@ test("Fetches data and renders the bubbles on mounting", async () => {
   const loading = screen.getByTestId('loading')
   expect(loading).toBeInTheDocument()
 
-  mockGetColors.mockResolvedValueOnce(colors)
+  mockGetColors.mockResolvedValueOnce(colors.data)
 
 });
 
